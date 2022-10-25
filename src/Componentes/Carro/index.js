@@ -1,14 +1,20 @@
 import { CarroContainer } from './styles'
 
-export function Carro({ modelo, cor, ano, flex, adicionadoPor }) {
+export function Carro(props) {
+
+  const mudaCarro = () => {
+    setCarro(props.automovel)
+  }
+
   return (
     <CarroContainer>
-      <h2>{modelo}</h2>
+      <h2>Modelo</h2>
       <ul>
-        <li>Cor: {cor}</li>
-        <li>Ano: {ano}</li>
-        <li>Flex: {flex ? 'Sim' : 'Não'}</li>
-        <li>Adicionado: {adicionadoPor}</li>
+        <li>Cor: {props.automovel.cor}</li>
+        <li>Ano: {props.automovel.ano}</li>
+        <li>Flex: {props.automovel.flex ? 'Sim' : 'Não'}</li>
+        {/* <li>Adicionado: {adicionadoPor}</li> */}
+        <button onClick={mudaCarro}>Muda carro</button>
       </ul>
     </CarroContainer>
   )
