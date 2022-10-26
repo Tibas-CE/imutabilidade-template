@@ -3,7 +3,7 @@ import { CarroContainer } from './styles'
 export function Carro(props) {
 
   const mudaCarro = () => {
-    setCarro(props.automovel)
+    props.setCarro(props.novoCarro)
   }
 
   return (
